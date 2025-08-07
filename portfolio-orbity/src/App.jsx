@@ -1,5 +1,7 @@
 // src/App.jsx
-import Home from './Components/Home'
+import { Home } from './Pages/Home';
+
+import './App.css';
 
 export default function App() {
   return (

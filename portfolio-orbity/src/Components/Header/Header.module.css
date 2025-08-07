@@ -1,0 +1,52 @@
+@import url('../../styles/variables.css');
+
+header {
+    padding: 20px 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Estilos da Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-family: var(--font-main);
+    color: var(--color-white);
+    
+    & img {
+        width: 60px;
+        height: 60px;
+    }
+    
+    & h1 {
+        font-size: 26px;
+    }
+}
+/* --------------------------------Fim---------------------------------------- */
+
+/* Estilos da Navbar */
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 2px;
+  transition: color 0.3s ease-in-out, border-bottom 0.3s ease;
+}
+
+.navbar ul li a:hover {
+  color: #b084ff;
+  border-bottom: 1px solid #b084ff;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+    list-style: none;
+    font-family: var(--font-secondary);
+    font-weight: 600;
+    font-size: 16px;
+}
+/* --------------------------------Fim---------------------------------------- */
