@@ -8,6 +8,7 @@ header {
     background: transparent;
     position: fixed;
     min-width: 100%;
+    z-index: 1000;
 }
 
 /* Estilos da Logo */

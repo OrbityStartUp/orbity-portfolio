@@ -3,3 +3,36 @@
 * {
     background-color: var(--color-primary);
 }
+
+/* src/components/Hero.module.css */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  position: relative;
+  background: #14052a;
+  overflow: hidden;
+}
+
+.canvasContainer {
+  width: 50%;
+  height: 100%;
+}
+
+.content {
+  width: 50%;
+  color: white;
+  padding: 4rem;
+  z-index: 1;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.5rem;
+  opacity: 0.8;
+}
