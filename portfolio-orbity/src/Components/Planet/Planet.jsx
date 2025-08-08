@@ -19,7 +19,7 @@ export function Planet() {
     });
 
     return (
-        <group ref={planetRef}>
+        <group ref={planetRef} position={[2, 0, 0]}>
             <mesh>
                 <sphereGeometry args={[1, 64, 64]} />
                 <meshStandardMaterial map={gradientTexture} />
