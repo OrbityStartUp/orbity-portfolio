@@ -1,9 +1,5 @@
 @import url('../../styles/variables.css');
 
-* {
-  background-color: var(--color-primary);
-}
-
 /* src/components/Hero.module.css */
 /* Começo da estilização do Hero do planeta com as estrelas e do texto de apresentação*/
 .hero {
@@ -14,6 +10,7 @@
   color: var(--color-text);
   padding: 20px;
   font-family: var(--font-main);
+  background-color: var(--color-primary);
 }
 
 .apresentation {

@@ -32,15 +32,15 @@ header {
 
 /* Estilos da Navbar */
 .navbar ul li a {
-  color: white;
-  text-decoration: none;
-  padding: 2px;
-  transition: color 0.3s ease-in-out, border-bottom 0.3s ease;
+    color: white;
+    text-decoration: none;
+    padding: 2px;
+    transition: color 0.3s ease-in-out, border-bottom 0.3s ease;
 }
 
 .navbar ul li a:hover {
-  color: #b084ff;
-  border-bottom: 1px solid #b084ff;
+    color: #b084ff;
+    border-bottom: 1px solid #b084ff;
 }
 
 .links {
