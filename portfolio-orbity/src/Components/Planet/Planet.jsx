@@ -1,7 +1,7 @@
 import { useMemo, useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
-import gradient from '../../assets/Icons/gradient3.png';
+import gradient from '../../assets/Icons/gradient.png';
 
 export function Planet() {
     const planetRef = useRef();

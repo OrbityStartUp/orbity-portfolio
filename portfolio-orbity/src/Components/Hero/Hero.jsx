@@ -3,10 +3,19 @@ import { OrbitControls, Stars } from '@react-three/drei';
 import { Planet } from '../Planet/Planet';
 import styles from './Hero.module.css';
 
+import ButtonScroll from '../Components-Uiverse/Scroll.jsx';
+
 export function Hero() {
+    const scrollToAbout = () => {
+        const aboutSection = document.getElementById('about');
+        if (aboutSection) {
+            aboutSection.scrollIntoView({behavior: 'smooth'});
+        }
+    };
+
     return (
         <>
-            <section className={styles.hero}>
+            <section id="home" className={styles.hero}>
                 <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
                     <ambientLight intensity={0.5} />
                     <directionalLight position={[5, 5, 5]} intensity={1} />
@@ -52,6 +61,9 @@ export function Hero() {
                     </h2>
                     <p className={styles.slogan}>"Onde a inovação gira em torno das ideias!"</p>
                 </div>
+            </div>
+            <div className={styles.buttonScroll} onClick={scrollToAbout}>
+                <ButtonScroll className={styles.scrollButton} />
             </div>
         </>
     );
