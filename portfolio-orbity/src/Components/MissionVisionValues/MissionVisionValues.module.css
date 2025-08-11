@@ -4,7 +4,7 @@
     background-color: #11071d;
     color: var(--color-white);
     font-family: var(--font-main);
-    padding: 50px 20px;
+    padding: 100px 20px;
 
     & h2 {
         max-width: 1000px;
@@ -12,6 +12,7 @@
         text-align: left;
         font-size: 2rem;
         margin-bottom: 3rem;
+        cursor: default;
     }
 }
 
@@ -58,4 +59,6 @@
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
     text-align: justify;
+    border-bottom: 2px solid var(--color-white);
+    cursor: default;
 }

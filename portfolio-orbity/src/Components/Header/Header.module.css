@@ -1,14 +1,20 @@
 @import url('../../styles/variables.css');
 
 header {
-    padding: 20px 200px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: transparent;
     position: fixed;
-    min-width: 100%;
+    top: 0;
+    width: 100%;
+    padding: 1rem 8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    background-color: transparent;
     z-index: 1000;
+}
+
+.header.active {
+  background-color: rgba(17, 7, 29, 1);
 }
 
 /* Estilos da Logo */

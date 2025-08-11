@@ -15,7 +15,7 @@ const items = [
   },
   {
     title: 'Valores',
-    content: 'Nossas decisões são pautadas pela honestidade e transparência. Nossas soluções se baseiam na criatividade, inovação, na visão dos nossos clientes e na qualidade do produto final.',
+    content: 'Nossas decisões são guiadas pela honestidade, transparência e respeito mútuo. Acreditamos que a confiança é construída com ações consistentes e comunicação clara. Cada projeto é pensado com empatia e visão estratégica, sempre considerando as necessidades e expectativas dos nossos clientes.',
     icon: '💎',
   },
 ];
@@ -38,7 +38,7 @@ export function MissionVisionValues() {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <section id='missons' className={styles.container}>
       <h2>Missão, visão e valores</h2>
       <div className={styles.timeline}>
         {items.map((item, index) => (
@@ -54,6 +54,6 @@ export function MissionVisionValues() {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
