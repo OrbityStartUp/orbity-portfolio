@@ -65,3 +65,17 @@
 .imageWrapper:hover .overlay {
     opacity: 1;
 }
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    font-family: var(--font-main);
+
+    & p {
+        text-align: justify;
+        cursor: default;
+        margin-bottom: 1rem;
+    }
+}

@@ -1,11 +1,21 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
+import { DecalGeometry } from "three/examples/jsm/geometries/DecalGeometry";
+
+// Ícones
+import html from "../../assets/Icons/html.png";
+import css from "../../assets/Icons/css.png";
+import js from "../../assets/Icons/js.png";
+import ts from "../../assets/Icons/ts.png";
+import react from "../../assets/Icons/react.png";
+import node from "../../assets/Icons/node.png";
+
+const icons = [html, css, js, ts, react, node];
 
 export function Balls() {
   const mountRef = useRef(null);
 
   useEffect(() => {
-    // Cena, câmera e renderizador
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
       45,
@@ -22,47 +32,57 @@ export function Balls() {
     );
     mountRef.current.appendChild(renderer.domElement);
 
-    // Luz
     scene.add(new THREE.AmbientLight(0xffffff, 1));
 
-    // Carregador de textura
-    const loader = new THREE.TextureLoader();
-    const icons = [
-      "html.png", "css.png", "js.png", "ts.png",
-      "react.png", "redux.png", "tailwind.png",
-      "node.png", "mongo.png", "git.png"
-    ];
-
+    const textureLoader = new THREE.TextureLoader();
     const meshes = [];
 
-    // Criar bolinhas
     icons.forEach((icon, i) => {
-      const texture = loader.load(`/icons/${icon}`);
-      const geo = new THREE.DodecahedronGeometry(1, 0);
-      const mat = new THREE.MeshStandardMaterial({ map: texture });
-      const mesh = new THREE.Mesh(geo, mat);
+      const sphereGeo = new THREE.SphereGeometry(0.6, 32, 32);
+      const sphereMat = new THREE.MeshStandardMaterial({ color: 0xffffff });
+      const sphereMesh = new THREE.Mesh(sphereGeo, sphereMat);
 
-      // Distribuir em 2 linhas
-      const row = Math.floor(i / 5);
-      const col = i % 5;
-      mesh.position.x = (col - 2) * 2.5;
-      mesh.position.y = row === 0 ? 1.5 : -1.5;
+      // Posicionamento em 2 linhas de 3
+      const row = Math.floor(i / 3);
+      const col = i % 3;
+      sphereMesh.position.x = (col - 1) * 2.2;
+      sphereMesh.position.y = row === 0 ? 1.5 : -1.5;
 
-      scene.add(mesh);
-      meshes.push(mesh);
+      scene.add(sphereMesh);
+      meshes.push(sphereMesh);
+
+      // Aplicar decal (ícone)
+      const decalTexture = textureLoader.load(icon);
+      const decalMat = new THREE.MeshBasicMaterial({
+        map: decalTexture,
+        transparent: true,
+        depthTest: true,
+        depthWrite: false,
+      });
+
+      const decalGeo = new DecalGeometry(
+        sphereMesh,
+        new THREE.Vector3(0, 0, 0.6), // posição frontal
+        new THREE.Euler(0, 0, 0),
+        new THREE.Vector3(0.8, 0.8, 0.8) // tamanho do decal
+      );
+
+      const decalMesh = new THREE.Mesh(decalGeo, decalMat);
+      sphereMesh.add(decalMesh);
     });
 
-    // Variáveis de controle
+    // Interação
     let selectedMesh = null;
     let isDragging = false;
     let prevMouse = { x: 0, y: 0 };
     const raycaster = new THREE.Raycaster();
     const mouse = new THREE.Vector2();
 
-    // Eventos
     const onMouseDown = (event) => {
-      mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-      mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+      const bounds = mountRef.current.getBoundingClientRect();
+      mouse.x = ((event.clientX - bounds.left) / bounds.width) * 2 - 1;
+      mouse.y = -((event.clientY - bounds.top) / bounds.height) * 2 + 1;
+
       raycaster.setFromCamera(mouse, camera);
       const intersects = raycaster.intersectObjects(meshes);
 
@@ -96,23 +116,21 @@ export function Balls() {
     window.addEventListener("mousemove", onMouseMove);
     window.addEventListener("mouseup", onMouseUp);
 
-    // Loop
     const animate = () => {
       requestAnimationFrame(animate);
       renderer.render(scene, camera);
     };
     animate();
 
-    // Cleanup
     return () => {
-        window.removeEventListener("mousedown", onMouseDown);
-        window.removeEventListener("mousemove", onMouseMove);
-        window.removeEventListener("mouseup", onMouseUp);
-        if (mountRef.current && renderer.domElement.parentNode === mountRef.current) {
-            mountRef.current.removeChild(renderer.domElement);
-        }
+      window.removeEventListener("mousedown", onMouseDown);
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("mouseup", onMouseUp);
+      if (mountRef.current && renderer.domElement.parentNode === mountRef.current) {
+        mountRef.current.removeChild(renderer.domElement);
+      }
     };
   }, []);
 
-  return <div ref={mountRef} style={{ width: "100%", height: "400px" }} />;
+  return <div ref={mountRef} style={{ width: "100%", height: "300px" }} />;
 }

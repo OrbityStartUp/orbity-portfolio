@@ -7,6 +7,7 @@ export function ModalTeam({ isOpen, onClose, children }) {
     return ReactDOM.createPortal (
         <div className={styles.backdrop} onClick={onClose}>
             <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+                
                 <button className={styles.closeBtn} onClick={onClose}>
                     &times;
                 </button>
