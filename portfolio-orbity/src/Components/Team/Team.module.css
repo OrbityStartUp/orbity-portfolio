@@ -1,0 +1,67 @@
+@import url('../../styles/variables.css');
+
+.containerTeam {
+    background-color: #11071d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 30px;
+    font-family: var(--font-main);
+
+    & h2 {
+        margin: 0 auto;
+        font-size: 2rem;
+        margin-bottom: 3rem;
+        cursor: default;
+        color: var(--color-white);
+    }
+
+    & p {
+        color: var(--color-white);
+        font-size: 14px;
+        font-weight: 200;
+        cursor: pointer;
+    }
+}
+
+.imageWrapper {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.imageWrapper img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+}
+
+/* camada preta transparente */
+.overlay {
+    position: absolute;
+    inset: 0; /* top:0; right:0; bottom:0; left:0 */
+    background-color: rgba(0, 0, 0, 0.3); /* preto transparente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+/* nome no meio */
+.name {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* mostra overlay ao passar o mouse */
+.imageWrapper:hover .overlay {
+    opacity: 1;
+}
