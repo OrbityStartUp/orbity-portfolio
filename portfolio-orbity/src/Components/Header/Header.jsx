@@ -32,7 +32,6 @@ export function Header() {
                 <ul className={styles.links}>
                     <li><a href="#home">Ínicio</a></li>
                     <li><a href="#about">Sobre nós</a></li>
-                    <li><a href="#missons">Missão, visão e valores</a></li>
                     <li><a href="#team">Equipe</a></li>
                     <li><a href="#contact">Contato</a></li>
                 </ul>

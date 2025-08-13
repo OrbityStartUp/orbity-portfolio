@@ -31,7 +31,7 @@ export function MissionVisionValues() {
         duration: 800,
         easing: 'ease-out',
         opacity: 0,
-        delay: index * 300, // anima um de cada vez
+        delay: index * 300,
         reset: false,
       });
     });
