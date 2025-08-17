@@ -3,12 +3,12 @@ import * as THREE from "three";
 import { DecalGeometry } from "three/examples/jsm/geometries/DecalGeometry";
 
 // Ícones
-import html from "../../assets/Icons/html.png";
-import css from "../../assets/Icons/css.png";
-import js from "../../assets/Icons/js.png";
-import ts from "../../assets/Icons/ts.png";
-import react from "../../assets/Icons/react.png";
-import node from "../../assets/Icons/node.png";
+import html from "../../assets/tech/html.png";
+import css from "../../assets/tech/css.png";
+import js from "../../assets/tech/javascript.png";
+import ts from "../../assets/tech/typescript.png";
+import react from "../../assets/tech/reactjs.png";
+import node from "../../assets/tech/nodejs.png";
 
 const icons = [html, css, js, ts, react, node];
 
@@ -32,13 +32,15 @@ export function Balls() {
     );
     mountRef.current.appendChild(renderer.domElement);
 
-    scene.add(new THREE.AmbientLight(0xffffff, 1));
+    const backLight = new THREE.DirectionalLight(0xffffff, 1.5);
+    backLight.position.set(0, 0, 1.5);
+    scene.add(backLight);
 
     const textureLoader = new THREE.TextureLoader();
     const meshes = [];
 
     icons.forEach((icon, i) => {
-      const sphereGeo = new THREE.SphereGeometry(0.6, 32, 32);
+      const sphereGeo = new THREE.SphereGeometry(0.6, 20, 6);
       const sphereMat = new THREE.MeshStandardMaterial({ color: 0xffffff });
       const sphereMesh = new THREE.Mesh(sphereGeo, sphereMat);
 
@@ -132,5 +134,5 @@ export function Balls() {
     };
   }, []);
 
-  return <div ref={mountRef} style={{ width: "100%", height: "300px" }} />;
+  return <div ref={mountRef} style={{ width: "100%", height: "250px" }} />;
 }
