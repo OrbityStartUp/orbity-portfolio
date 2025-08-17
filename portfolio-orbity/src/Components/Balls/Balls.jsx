@@ -2,17 +2,6 @@ import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { DecalGeometry } from "three/examples/jsm/geometries/DecalGeometry";
 
-// Ícones
-import html from "../../assets/tech/html.png";
-import css from "../../assets/tech/css.png";
-import js from "../../assets/tech/javascript.png";
-import ts from "../../assets/tech/typescript.png";
-import react from "../../assets/tech/reactjs.png";
-import python from "../../assets/tech/python.png";
-
-const icons = [html, css, js, ts, react, python];
-const labels = ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Python"];
-
 export function Balls({ skills }) {
   const mountRef = useRef(null);
 

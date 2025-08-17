@@ -19,7 +19,7 @@
 /* Caixa do modal */
 .modalContent {
     background: var(--color-white);
-    border-radius: 10px;
+    border-radius: 20px;
     max-width: 1200px;
     animation: zoomIn 0.5s ease forwards;
     transform-origin: center;
@@ -28,9 +28,9 @@
     height: 0 auto;
 
     & img {
-        width: 600px;
-        border-radius: 10px 0 0 10px;
-        height: 600px;
+        width: 580px;
+        border-radius: 20px 0 0 20px;
+        height: 0 auto;
     }
 }
 

@@ -5,11 +5,12 @@ import { Balls } from "../../Components/Balls/Balls";
 
 // Foto dos integrantes
 import fotoAri from "../../assets/Pictures/Foto de Ari.png";
+import fotoJoao from "../../assets/Pictures/Foto de Joao.png";
+import fotoJoyce from "../../assets/Pictures/Foto de Joyce.png";
 import fotoNico from "../../assets/Pictures/Foto de Nico.png";
 import fotoGabi from "../../assets/Pictures/Foto de Gabi.png";
 
 // Icones das tecnologias
-import html from "../../assets/tech/html.png";
 import css from "../../assets/tech/css.png";
 import js from "../../assets/tech/javascript.png";
 import ts from "../../assets/tech/typescript.png";
@@ -19,6 +20,9 @@ import mysql from "../../assets/tech/mysql.png";
 import java from "../../assets/tech/java.png";
 import flutter from "../../assets/tech/flutter.png";
 import c_plus from "../../assets/tech/C++.png";
+import groq from "../../assets/tech/groq.png";
+import figma from "../../assets/tech/figma.png";
+import threejs from "../../assets/tech/threejs.svg";
 
 // Dados dos integrantes
 const teamMembers = [
@@ -45,22 +49,42 @@ const teamMembers = [
   {
     id: 2,
     name: "João",
-    photo: fotoNico,
+    photo: fotoJoao,
     description: [
-      "Sou o João, apaixonado por back-end...",
-      "Adoro resolver problemas complexos com lógica."
+      "Muito prazer! Tenho 19 anos e sou um programador apaixonado por desenvolvimento BackEnd e FrontEnd, gosto de conhecer tecnologias novas e me desafiar, afinal isso que faz um bom dev.",
+
+      "Atualmente estou procurando me desenvolver em inteligência artificial. Meu foco é criação de soluções de todos os tipos para auxiliar você e seu negócio, deixando um sistema fluido, bonito e automatizado.",
+
+      "Acredito que a tecnologia deve ser acessível e impactar positivamente a vida das pessoas, por isso busco unir criatividade, boas práticas e inovação em cada projeto. Estou sempre em busca de novos aprendizados e desafios que me permitam crescer como profissional e entregar soluções cada vez mais completas e eficazes."
     ],
-    skills: ["Java", "Spring", "MySQL"]
+    skills: [
+        { name: "Python", icon: python },
+        { name: "Java", icon: java },
+        { name: "Groq", icon: groq },
+        { name: "React", icon: react },
+        { name: "JavaScript", icon: js },
+        { name: "CSS", icon: css }
+    ]
   },
   {
     id: 3,
     name: "Joyce",
-    photo: fotoNico,
+    photo: fotoJoyce,
     description: [
-      "Olá, sou a Joyce e foco em projetos fullstack...",
-      "Amo desenvolver coisas que realmente ajudem as pessoas."
+      "Muito prazer! Tenho 19 anos e sou apaixonada por tecnologia e inovação. Meu foco é desenvolver interfaces intuitivas e criar infraestruturas sólidas, sempre aplicando as melhores práticas de programação e acompanhando as tendências do mercado.",
+
+      "Sou movida pela curiosidade e pelo desejo constante de aprendizado, buscando aprimorar minhas habilidades técnicas e interpessoais para evoluir como profissional. Além do interesse em programação, valorizo muito a colaboração em equipe, a resolução de problemas, a entrega de soluções de qualidade e que gerem impactos positivos.",
+      
+      "Acredito que a tecnologia vai além do código: é uma ferramenta poderosa para impactar positivamente a vida das pessoas, otimizar processos e abrir novos caminhos para a inovação. Minha meta é evoluir a cada desafio, sempre mantendo o compromisso com a qualidade, a colaboração e o aprendizado contínuo."
     ],
-    skills: ["Node.js", "React", "MongoDB"]
+    skills: [
+        { name: "Python", icon: python },
+        { name: "Java", icon: java },
+        { name: "React", icon: react },
+        { name: "CSS", icon: css },
+        { name: "JavaScript", icon: js },
+        { name: "Figma", icon: figma }
+      ]
   },
   {
     id: 4,
@@ -74,12 +98,12 @@ const teamMembers = [
         "Estou sempre em busca de aprender novas ferramentas e tendências para evoluir como profissional e entregar projetos que unam performance e design de qualidade."
     ],
     skills: [
-        { name: "HTML", icon: html },
-        { name: "CSS", icon: css },
-        { name: "JavaScript", icon: js },
         { name: "React", icon: react },
+        { name: "CSS", icon: css },
         { name: "TypeScript", icon: ts },
-        { name: "Python", icon: python }
+        { name: "Threejs", icon: threejs },
+        { name: "Python", icon: python },
+        { name: "Java", icon: java }
     ]
   },
   {
