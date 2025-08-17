@@ -26,7 +26,6 @@
     transform-origin: center;
     position: relative;
     display: flex;
-    gap: 20px;
 
     & img {
         width: 568px;

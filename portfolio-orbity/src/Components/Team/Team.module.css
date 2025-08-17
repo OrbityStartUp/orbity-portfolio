@@ -76,6 +76,6 @@
     & p {
         text-align: justify;
         cursor: default;
-        margin-bottom: 1rem;
+        margin: 1rem 0;
     }
 }
