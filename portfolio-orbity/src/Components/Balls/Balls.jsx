@@ -13,7 +13,7 @@ import python from "../../assets/tech/python.png";
 const icons = [html, css, js, ts, react, python];
 const labels = ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Python"];
 
-export function Balls() {
+export function Balls({ skills }) {
   const mountRef = useRef(null);
 
   useEffect(() => {
@@ -40,17 +40,20 @@ export function Balls() {
     const textureLoader = new THREE.TextureLoader();
     const meshes = [];
 
-    icons.forEach((icon, i) => {
+    skills.forEach((skill, i) => {
+      const name = typeof skill === "string" ? skill : skill.name;
+      const icon = typeof skill === "string" ? null : skill.icon;
+      
       const sphereGeo = new THREE.SphereGeometry(1, 20, 6);
       const sphereMat = new THREE.MeshStandardMaterial({ color: 0xffffff });
       const sphereMesh = new THREE.Mesh(sphereGeo, sphereMat);
 
       // --- Adiciona o nome para tooltip ---
-      const names = ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Python"];
-      sphereMesh.name = names[i];  
+      sphereMesh.name = name;  
+      sphereMesh.userData.label = name;
 
       // Guarda o nome
-      sphereMesh.userData.label = labels[i];
+      sphereMesh.userData.label = name;
 
       // Posicionamento em 2 linhas de 3
       const row = Math.floor(i / 3);
@@ -95,7 +98,7 @@ export function Balls() {
       mouse.y = -((event.clientY - bounds.top) / bounds.height) * 2 + 1;
 
       raycaster.setFromCamera(mouse, camera);
-      const intersects = raycaster.intersectObjects(meshes);
+      const intersects = raycaster.intersectObjects(meshes, true);
 
       if (intersects.length > 0) {
         selectedMesh = intersects[0].object;
