@@ -89,10 +89,15 @@
   -webkit-text-fill-color: transparent;
 }
 
+.orbity {
+  cursor: default;
+}
+
 .slogan {
   margin-top: 10px;
   font-size: 1.2rem;
   color: white;
+  cursor: default;
 }
 
 .buttonScroll {

@@ -4,8 +4,8 @@ import { useEffect } from 'react';
 import { Home } from './Pages/Home';
 import { AboutUs } from './Components/AboutUs/AboutUs';
 import { MissionVisionValues } from './Components/MissionVisionValues/MissionVisionValues';
-import { Balls } from './Components/Balls/Balls';
 import { Team } from './Components/Team/Team';
+import { Footer } from './Components/Footer/Footer';
 
 import './App.css';
 
@@ -15,8 +15,8 @@ export default function App() {
       <Home />
       <AboutUs />
       <MissionVisionValues />
-      {/* <Balls /> */}
       <Team />
+      <Footer />
     </>
   )
 }
