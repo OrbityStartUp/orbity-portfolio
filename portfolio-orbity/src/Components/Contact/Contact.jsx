@@ -28,7 +28,7 @@ export function Contact() {
   };
 
   return (
-    <form ref={form} onSubmit={sendEmail} className={styles.containerEmail}>
+    <form id="contact" ref={form} onSubmit={sendEmail} className={styles.containerEmail}>
         <div className={styles.textArea}>
             <h3>NÃO SEJA TÍMIDO!</h3>
             <p>Fique a vontade para entrar em contato conosco. Estamos sempre abertos para discutir novos projetos, ideias criativas ou oportunidades de fazer partes de suas visões.</p>

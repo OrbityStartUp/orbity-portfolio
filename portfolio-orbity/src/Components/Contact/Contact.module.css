@@ -4,6 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 80px;
     background-color: #11071d;
 }
 
@@ -25,5 +26,19 @@
         padding: 0 10px;
         font-size: 16px;
         
+    }
+}
+
+.textArea {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    color: var(--color-white);
+    font-family: var(--font-main);
+
+    & p {
+        max-width: 600px;
+        text-align: justify;
+        line-height: 1.5;
     }
 }
