@@ -1,0 +1,100 @@
+@import url('../../styles/variables.css');
+
+.aboutUs {
+    background: linear-gradient(to bottom, #1e0d33, #11071d);
+    height: 100%;
+    padding: 110px 0;
+    font-family: var(--font-main);
+    color: var(--color-white);
+    cursor: default;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.intro{
+    text-align: center;
+}
+
+.textAboutUs {
+    display: flex;
+    flex-direction: column;
+    width: 1055px;
+    text-align: justify;
+    gap: 20px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-top: 60px;
+}
+
+.card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 280px;
+    background-color: rgba(44, 19, 75, 0.6);
+    text-align: center;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    background-clip: padding-box;
+    box-shadow: 0 0 40px rgba(240, 185, 67, 0.3);
+    position: relative;
+    gap: 20px;
+    padding: 20px;
+    opacity: 1;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    padding: 2px;
+    background: linear-gradient(45deg, #e41777, #F8BB37);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 50px rgba(240, 185, 67, 0.5);
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    padding: 2px;
+    background: linear-gradient(45deg, #e41777, #F8BB37);
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.card:hover img {
+    transform: scale(1.2);
+}
